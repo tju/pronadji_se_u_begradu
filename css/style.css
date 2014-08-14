@@ -184,11 +184,16 @@ p {
     box-shadow: 0 0 20px rgba(255, 255, 255, 0.9);
 }
 
+@media (max-width: 1200px) {
+    #roundEnd {
+        margin-top: 20px;
+    }
+}
+
 #roundEnd #roundMap {
     width: 100%;
     height: 250px;
     background: red;
-    margin: 20px 0;
 }
 
 #roundEnd .closeBtn {
@@ -199,4 +204,45 @@ p {
     width: 300px;
     height: 300px;
     position: relative;
+}
+
+footer {
+    position: absolute;
+    right: 20px;
+    z-index: 999999;
+    bottom: 30px;
+    color: #fff;
+    font-size: 16px;
+}
+
+footer a {
+    color: #fff;
+    font-size: 18px;
+}
+
+footer a:hover {
+    text-decoration: none;
+    color: #ccc;
+}
+
+.logo {
+    background: url("http://aries.rs/images/logo.png") center no-repeat;
+    background: url("http://aries.rs/images/logo.png") center no-repeat;
+    display: block;
+    height: 150px;
+    width: 150px;
+    position: absolute;
+    z-index: 999999999;
+    background-size: contain;
+    left: 50%;
+    top: 10px;
+    margin-left: -75px;
+}
+
+@media (max-height: 700px) {
+    .logo {
+        height: 100px;
+        width: 100px;
+        margin-left: -50px;
+    }
 }

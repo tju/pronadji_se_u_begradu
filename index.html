@@ -2,44 +2,52 @@
 <html>
 <head>
     <meta charset='utf-8'>
-    <title>PRONAĐI SE U BEOGRADU!</title>
+    <title>Pronađi se u Beogradu!</title>
+    <meta name="description" content="Koliko poznaješ Beograd? Imaš 30 sekundi da se nađeš u Beogradu.">
+    <meta name="author" content="Aries, Ivan Ćurković, Nemanja Čizmić, Marko Škuletić, Margareta Nedeljković">
+    <meta name="classification" content="Web Development"/>
+    <meta name="language" content="Serbian, Srpski"/>
+
     <meta property="og:title" content="PRONAĐI SE U BEOGRADU"/>
     <meta property="og:type" content="game"/>
     <meta property="og:description" content="Koliko poznaješ Beograd? Imaš 30 sekundi da se nađeš u Beogradu."/>
     <meta property="og:url" content="http://fun.aries.rs/pronadji-se-u-beogradu/"/>
     <meta property="og:image" content="http://fun.aries.rs/pronadji-se-u-beogradu/img/pronadji-se-u-beogradu.png"/>
-
+    <meta property="og:site_name" content="PRONAĐI SE U BEOGRADU | Powered by Aries: Coloring The Web”"/>
 
     <link rel="shortcut icon" href="img/favicon.ico"/>
     <link rel="image" type="image/jpeg" href="http://aries.rs/images/logo.png"/>
     <link rel="apple-touch-icon-precomposed" href="img/apple_touch_icon.png"/>
+    <link rel='canonical' href='http://fun.aries.rs/pronadji-se-u-beogradu/'/>
+    <link rel='shortlink' href='http://fun.aries.rs/pronadji-se-u-beogradu/'/>
 
     <link rel='stylesheet' href='css/bootstrap.css'/>
     <link rel='stylesheet' href='css/style.css'/>
+    <link rel="image" type="image/jpeg" href="http://aries.rs/images/logo.png"/>
+
     <script type='text/javascript' src='https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js'></script>
-    <script type='text/javascript'
-            src='https://maps.googleapis.com/maps/api/js?key=AIzaSyDduran98iEvgMc_fJxE_sRtb_T3zOjZPQ&sensor=false&libraries=geometry'></script>
+    <script type='text/javascript' src='https://maps.googleapis.com/maps/api/js?key=AIzaSyDduran98iEvgMc_fJxE_sRtb_T3zOjZPQ&sensor=false&libraries=geometry'></script>
     <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,900&subset=latin,latin-ext' rel='stylesheet' type='text/css'/>
     <link href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.css" rel="stylesheet">
-    <script type='text/javascript' src='js/rnd.js'></script>
-    <script type='text/javascript' src='js/minimap.js'></script>
-    <script type='text/javascript' src='js/streetviewmap.js'></script>
-    <script type='text/javascript' src='js/roundmap.js'></script>
-    <script type='text/javascript' src='js/app.js'></script>
-    <script>
-        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-                m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-        ga('create', 'UA-49377306-2', 'auto');
-        ga('send', 'pageview');
-
-    </script>
+    <script>(function (G, o, O, g, l) {
+        G.GoogleAnalyticsObject = O;
+        G[O] || (G[O] = function () {
+            (G[O].q = G[O].q || []).push(arguments)
+        });
+        G[O].l = +new Date;
+        g = o.createElement('script'), l = o.scripts[0];
+        g.src = '//www.google-analytics.com/analytics.js';
+        l.parentNode.insertBefore(g, l)
+    }(this, document, 'ga'));
+    ga('create', 'UA-49377306-2');
+    ga('require', 'displayfeatures');
+    ga('send', 'pageview')</script>
 </head>
 <body>
 <div id='content'>
     <div id="roundEnd"></div>
+    <div id="logo"></div>
     <div id="endGame"></div>
     <div id='scoreBoard'>
         <span class='round'>Trenutna runda: <b>1 od 5</b></span><br/>
@@ -50,16 +58,12 @@
     <div id='timer'></div>
     <div id='guessButton' class="btn btn-large btn-primary">Pogađaj</div>
     <div id='pano'></div>
-    <div id="fb-root"></div>
-    <script>(function (d, s, id) {
-        var js, fjs = d.getElementsByTagName(s)[0];
-        if (d.getElementById(id))
-            return;
-        js = d.createElement(s);
-        js.id = id;
-        js.src = "//connect.facebook.net/en_GB/all.js#xfbml=1";
-        fjs.parentNode.insertBefore(js, fjs);
-    }(document, 'script', 'facebook-jssdk'));</script>
+    <footer>Powered by <a href="http://www.aries.rs/" target="_blank">ARIES.</a></footer>
 </div>
+<script type='text/javascript' src='js/rnd.js'></script>
+<script type='text/javascript' src='js/minimap.js'></script>
+<script type='text/javascript' src='js/streetviewmap.js'></script>
+<script type='text/javascript' src='js/roundmap.js'></script>
+<script type='text/javascript' src='js/app.js'></script>
 </body>
 </html>

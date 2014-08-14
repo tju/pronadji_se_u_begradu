@@ -126,23 +126,16 @@ $(document).ready(function () {
             } else {
                 points = 0;
             }
-
-
             if(round>=5){
                 window.shouldEndGame = true;
             }
-
             endRound();
-
         } else {
             // They ran out
         }
         timer();
         window.guessLatLng = '';
-
-
     }
-
     function endRound() {
         round++;
         if (ranOut == true) {
@@ -177,7 +170,7 @@ $(document).ready(function () {
             points = 0;
 
         } else {
-            $('#roundEnd').html('<p>Vaša lokacija je udaljena <br/><strong><h1>' + distance + '0</strong> metara</h1> <p>od markirane lokacije.</p><br/><div id="roundMap"></div><br/> <p>Dobili ste</p><h1>' + roundScore + ' poena</h1> <p>u ovoj rundi!</p><br/><br/><button class="btn btn-primary btn-large closeBtn" type="button">Nastavi dalje</button></p></p>');
+            $('#roundEnd').html('<p>Vaša lokacija je udaljena <br/><strong><h1>' + distance + '0</strong> metara</h1> <p>od markirane lokacije.</p><br/><div id="roundMap"></div><br/> <p>Dobili ste</p><h1>' + roundScore + ' poena</h1> <p>u ovoj rundi!</p><button class="btn btn-primary btn-large closeBtn" type="button">Nastavi dalje</button></p></p>');
             $('#roundEnd').fadeIn();
         }
         // Reset Params
@@ -189,9 +182,12 @@ $(document).ready(function () {
         roundScore = points;
         totalScore = totalScore + points;
         $('#miniMap, #pano, #guessButton, #scoreBoard, #timer').hide();
+        $('#logo').html('<div class="logo"></div>');
         $('#endGame').html('<h1>Čestitamo!</h1><h2>Vaš rezultat je:</h2><h1>'
             + totalScore + '!</h1><br/><p>Šeruj ovo na:</p><br/><a class="btn btn-large facebook fb-share-button" href="https://www.facebook.com/sharer/sharer.php?src=100&p[url]=' + encodeURIComponent('http://fun.aries.rs/pronadji-se-u-beogradu/') + '" target="_blank"><i class="fa fa-facebook fa-lg"></i><span>Facebook</span></a> <a class="btn btn-large twitter" href="https://twitter.com/intent/tweet?text=Upravo+sam+osvojio+' + totalScore + '+poena+u+igri+PRONAĐI+SE+U+BEOGRADU+@AriesCTW%21&url=http://fun.aries.rs/pronadji-se-u-beogradu/" target="_blank"><i class="fa fa-twitter fa-lg"></i><span class="rps-text">Twitter</span></a></p><br/><button class="btn btn-large playAgain" type="button">Igraj ponovo?</button>');
         $('#endGame').fadeIn(500);
+        $('#logo').fadeIn(700);
+        $('#share').fadeIn(700);
         rminitialize();
         // We're done with the game
         window.finished = true;
