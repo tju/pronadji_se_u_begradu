@@ -24,11 +24,11 @@ $(document).ready(function () {
         if (count <= 0) {
             console.log('finished');
 
-            if(round==5){
+            if (round == 5) {
                 window.shouldEndGame = true;
             }
 
-            if(round<=5){
+            if (round <= 5) {
                 endRound();
             }
 
@@ -39,8 +39,7 @@ $(document).ready(function () {
 
     // Guess Button
     $('#guessButton').click(function () {
-        if(!window.guessLatLng)
-        {
+        if (!window.guessLatLng) {
             alert("Prvo morate izabrati lokaciju na mapi!");
             return;
         }
@@ -57,7 +56,7 @@ $(document).ready(function () {
         $('#guessButton').show();
         // Reload maps to refresh coords
 
-        if(window.shouldEndGame){
+        if (window.shouldEndGame) {
             endGame();
         }
         else {
@@ -116,9 +115,9 @@ $(document).ready(function () {
             if (inRange(distance, 1, 2)) {        // Real basic point thresholds depending on kilometer distances
                 points = 10000;
             } else if (inRange(distance, 3, 10)) {
-                points = 7000 - distance*10;
+                points = 7000 - distance * 10;
             } else if (inRange(distance, 11, 100)) {
-                points = 3000 - distance*10;
+                points = 3000 - distance * 10;
             } else if (inRange(distance, 101, 490)) {
                 points = 500 - distance;
             } else if (inRange(distance, 491, 800)) {
@@ -126,7 +125,7 @@ $(document).ready(function () {
             } else {
                 points = 0;
             }
-            if(round>=5){
+            if (round >= 5) {
                 window.shouldEndGame = true;
             }
             endRound();
@@ -136,6 +135,7 @@ $(document).ready(function () {
         timer();
         window.guessLatLng = '';
     }
+
     function endRound() {
         round++;
         if (ranOut == true) {
@@ -183,7 +183,7 @@ $(document).ready(function () {
         totalScore = totalScore + points;
         $('#miniMap, #pano, #guessButton, #scoreBoard, #timer').hide();
         $('#logo').html('<div class="logo"></div>');
-        $('#endGame').html('<h1>Čestitamo!</h1><h2>Vaš rezultat je:</h2><h1>'
+        $('#endGame').html('<h1>Čestitamo!</h1><h2>Vaš rezultat je:</h2>'
             + totalScore + '!</h1><br/><p>Šeruj ovo na:</p><br/><a class="btn btn-large facebook fb-share-button" href="https://www.facebook.com/sharer/sharer.php?src=100&p[url]=' + encodeURIComponent('http://fun.aries.rs/pronadji-se-u-beogradu/') + '" target="_blank"><i class="fa fa-facebook fa-lg"></i><span>Facebook</span></a> <a class="btn btn-large twitter" href="https://twitter.com/intent/tweet?text=Upravo+sam+osvojio+' + totalScore + '+poena+u+igri+PRONAĐI+SE+U+BEOGRADU+@AriesCTW%21&url=http://fun.aries.rs/pronadji-se-u-beogradu/" target="_blank"><i class="fa fa-twitter fa-lg"></i><span class="rps-text">Twitter</span></a></p><br/><button class="btn btn-large playAgain" type="button">Igraj ponovo?</button>');
         $('#endGame').fadeIn(500);
         $('#logo').fadeIn(700);
